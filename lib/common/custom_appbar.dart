@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:fooodly/common/app_style.dart';
 import 'package:fooodly/common/resuable_text.dart';
 import 'package:fooodly/constants/constants.dart';
 

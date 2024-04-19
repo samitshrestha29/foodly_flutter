@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fooodly/common/custom_container.dart';
 import 'package:fooodly/view/home/widgets/category_list.dart';
 

@@ -14,15 +14,10 @@ class ReusableText extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       text,
+      maxLines: 1,
+      softWrap: false,
+      textAlign: TextAlign.left,
       style: style,
     );
   }
-}
-
-TextStyle appstyle(double fontSize, Color color, FontWeight fontWeight) {
-  return TextStyle(
-    fontSize: fontSize,
-    color: color,
-    fontWeight: fontWeight,
-  );
 }
