@@ -41,11 +41,10 @@ class CustomAppbar extends StatelessWidget {
                       ),
                       SizedBox(
                         width: MediaQuery.of(context).size.width * 0.65,
-                        child: const FittedBox(
-                          child: Text(
-                            "16768 21st Ave N, Plymouth, MN 55447",
-                            overflow: TextOverflow.ellipsis,
-                          ),
+                        child: Text(
+                          "16768 21st Ave N, Plymouth, MN 55447",
+                          style: appstyle(11, kDark, FontWeight.normal),
+                          overflow: TextOverflow.ellipsis,
                         ),
                       ),
                     ],

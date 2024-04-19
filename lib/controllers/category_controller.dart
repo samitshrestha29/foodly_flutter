@@ -13,7 +13,7 @@ class CategoryController extends GetxController {
 
   String get titleValue => _title.value;
 
-  set updatetitle(String value) {
+  set updateTitle(String value) {
     _title.value = value;
   }
 }

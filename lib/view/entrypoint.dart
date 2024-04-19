@@ -25,14 +25,9 @@ class MainScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final controller = Get.put(TabIndexController());
-    final Size screenSize = MediaQuery.of(context).size;
+    // final Size screenSize = MediaQuery.of(context).size;
     return Obx(
       () => Scaffold(
-        appBar: PreferredSize(
-          preferredSize: Size(screenSize.width,
-              screenSize.height * 0.5), // Adjust the height as needed
-          child: const CustomAppbar(),
-        ),
         body: Stack(
           children: [
             pageList[controller.tabIndex],
