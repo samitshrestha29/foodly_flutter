@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_vector_icons/flutter_vector_icons.dart';
-import 'package:fooodly/common/custom_appbar.dart';
 import 'package:fooodly/constants/constants.dart';
 import 'package:fooodly/controllers/tab_index_controller.dart';
 import 'package:fooodly/view/cart/cart_page.dart';
@@ -55,8 +54,9 @@ class MainScreen extends StatelessWidget {
                           icon: Icon(Icons.search), label: 'Search'),
                       const BottomNavigationBarItem(
                           icon: Badge(
-                              label: Text('1'),
-                              child: Icon(FontAwesome.opencart)),
+                            label: Text('1'),
+                            child: Icon(FontAwesome.opencart),
+                          ),
                           label: 'Cart'),
                       BottomNavigationBarItem(
                           icon: controller.tabIndex == 3
