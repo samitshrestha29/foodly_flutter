@@ -20,7 +20,7 @@ class NearbyRestaurant extends StatelessWidget {
             logo: restaurant['logoUrl'],
             time: restaurant['time'],
             rating: restaurant["ratingCount"],
-            text: 'Hello World',
+            text: restaurant["title"],
           );
         }),
       ),
