@@ -5,9 +5,7 @@ import 'package:fooodly/common/back_ground_container.dart';
 import 'package:fooodly/common/resuable_text.dart';
 import 'package:fooodly/constants/constants.dart';
 import 'package:fooodly/constants/uidata.dart';
-import 'package:fooodly/view/home/widgets/food_list.dart';
 import 'package:fooodly/view/home/widgets/food_tile.dart';
-import 'package:fooodly/view/home/widgets/restaurant_tile.dart';
 
 class AllFastestFoods extends StatelessWidget {
   const AllFastestFoods({super.key});
@@ -16,10 +14,10 @@ class AllFastestFoods extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: kOffWhite,
-        elevation: 0.3,
+        elevation: 0,
+        backgroundColor: kSecondary,
         title: ReusableText(
-          text: "All Fastest Foods",
+          text: "Fastest Foods",
           style: appstyle(13, kDark, FontWeight.w500),
         ),
       ),

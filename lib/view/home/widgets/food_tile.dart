@@ -74,7 +74,34 @@ class FoodTile extends StatelessWidget {
                         text: "Delivery time:${food['time']}",
                         style: appstyle(11, kGray, FontWeight.w400),
                       ),
-                      SizedBox(width: width * 0.6, child: Container())
+                      SizedBox(
+                          width: width * 0.6,
+                          height: 16.h,
+                          child: ListView.builder(
+                              scrollDirection: Axis.horizontal,
+                              itemCount: food['additives'].length,
+                              itemBuilder: (context, i) {
+                                var addittive = food['additives'][i];
+                                return Container(
+                                  margin: EdgeInsets.only(right: 5.w),
+                                  decoration: BoxDecoration(
+                                    color: kSecondary,
+                                    borderRadius: BorderRadius.all(
+                                      Radius.circular(9.r),
+                                    ),
+                                  ),
+                                  child: Center(
+                                    child: Padding(
+                                      padding: EdgeInsets.all(2.h),
+                                      child: ReusableText(
+                                        text: addittive['title'],
+                                        style:
+                                            appstyle(8, kDark, FontWeight.w400),
+                                      ),
+                                    ),
+                                  ),
+                                );
+                              }))
                     ],
                   ),
                 ],
@@ -93,28 +120,32 @@ class FoodTile extends StatelessWidget {
               ),
               child: Center(
                 child: ReusableText(
-                  text: food['price'].toStringAsFixed(2),
+                  text: "\$ ${food['price'].toStringAsFixed(2)}",
                   style: appstyle(12, kLightWhite, FontWeight.w600),
                 ),
               ),
             ),
           ),
           Positioned(
-            right: 70.w,
+            right: 75.w,
             top: 6.h,
-            child: Container(
-              width: 19.w,
-              height: 19.h,
-              decoration: BoxDecoration(
-                color: kSecondary,
-                borderRadius: BorderRadius.circular(10.r),
-              ),
-              child: Center(
+            child: GestureDetector(
+              onTap: () {},
+              child: Container(
+                width: 19.w,
+                height: 19.h,
+                decoration: BoxDecoration(
+                  color: kSecondary,
+                  borderRadius: BorderRadius.circular(10.r),
+                ),
+                child: Center(
                   child: Icon(
-                MaterialCommunityIcons.cart_plus,
-                size: 15.h,
-                color: kLightWhite,
-              )),
+                    MaterialCommunityIcons.cart_plus,
+                    size: 15.h,
+                    color: kLightWhite,
+                  ),
+                ),
+              ),
             ),
           ),
         ],
