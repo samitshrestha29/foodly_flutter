@@ -9,7 +9,7 @@ FetchHook useFetchCategories() {
   final categoriesItems = useState<List<CategoriesModel>?>(null);
   final isLoading = useState<bool>(false);
   final error = useState<Exception?>(null);
-  final apiError = useState<ApiError?>(null);
+  final appiError = useState<ApiError?>(null);
 
   Future<void> fetchData() async {
     isLoading.value = true;
@@ -22,7 +22,7 @@ FetchHook useFetchCategories() {
       if (response.statusCode == 200) {
         categoriesItems.value = categoriesModelFromJson(response.body);
       } else {
-        apiError.value = apiErrorFromJson(response.body);
+        appiError.value = apiErrorFromJson(response.body);
       }
     } catch (e) {
       error.value = e as Exception;
