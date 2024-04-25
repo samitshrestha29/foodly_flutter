@@ -5,6 +5,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fooodly/common/app_style.dart';
 import 'package:fooodly/common/resuable_text.dart';
 import 'package:fooodly/constants/constants.dart';
+import 'package:fooodly/models/categories.dart';
 import 'package:fooodly/view/categories/category_page.dart';
 import 'package:get/get.dart';
 
@@ -15,7 +16,7 @@ class CategoryTile extends StatelessWidget {
     required this.category,
   });
 
-  var category;
+  CategoriesModel category;
 
   @override
   Widget build(BuildContext context) {
@@ -29,12 +30,12 @@ class CategoryTile extends StatelessWidget {
         radius: 18.r,
         backgroundColor: kGrayLight,
         child: Image.network(
-          category["imageUrl"],
+          category.imageUrl,
           fit: BoxFit.contain,
         ),
       ),
       title: ReusableText(
-        text: category['title'],
+        text: category.title,
         style: appstyle(12, kGray, FontWeight.normal),
       ),
       trailing: Icon(

@@ -22,10 +22,10 @@ class CategoriesModel {
 
   factory CategoriesModel.fromJson(Map<String, dynamic> json) =>
       CategoriesModel(
-        id: json["_id"],
-        title: json["title"],
-        value: json["value"],
-        imageUrl: json["imageUrl"],
+        id: json["_id"] ?? "",
+        title: json["title"] ?? "",
+        value: json["value"] ?? "",
+        imageUrl: json["imageUrl"] ?? "",
       );
 
   Map<String, dynamic> toJson() => {

@@ -25,7 +25,7 @@ class CategoryWidget extends StatelessWidget {
           controller.updateCategory = '';
           controller.updateTitle = '';
         } else if (category.value == 'more') {
-          Get.to(() => const AllCategories(),
+          Get.to(() => AllCategories(),
               transition: Transition.fadeIn,
               duration: const Duration(milliseconds: 900));
         } else {
