@@ -2,11 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:fooodly/constants/constants.dart';
 import 'package:fooodly/models/api_error.dart';
 import 'package:fooodly/models/foods_model.dart';
+import 'package:fooodly/models/hook_models/foods_hook.dart';
 import 'package:fooodly/models/hook_models/hook_result.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:http/http.dart' as http;
 
-FetchHook useFetchFoods(String code) {
+FetchFoods useFetchFoods(String code) {
   final foods = useState<List<FoodsModel>?>(null);
   final isLoading = useState<bool>(false);
   final error = useState<Exception?>(null);
@@ -42,7 +43,7 @@ FetchHook useFetchFoods(String code) {
     fetchData();
   }
 
-  return FetchHook(
+  return FetchFoods(
       data: foods.value,
       isLoading: isLoading.value,
       error: error.value,

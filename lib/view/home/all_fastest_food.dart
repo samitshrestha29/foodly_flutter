@@ -6,7 +6,6 @@ import 'package:fooodly/common/back_ground_container.dart';
 import 'package:fooodly/common/resuable_text.dart';
 import 'package:fooodly/common/shimmers/foodlist_shimmer.dart';
 import 'package:fooodly/constants/constants.dart';
-import 'package:fooodly/constants/uidata.dart';
 import 'package:fooodly/hooks/fetch_all_foods.dart';
 import 'package:fooodly/models/foods_model.dart';
 import 'package:fooodly/view/home/widgets/food_tile.dart';
@@ -32,11 +31,11 @@ class AllFastestFoods extends HookWidget {
         color: Colors.white,
         child: Padding(
           padding: const EdgeInsets.all(8.0),
-          child: Padding(
-            padding: EdgeInsets.fromLTRB(12.w, 12.w, 12.w, 12.w),
-            child: isLoading
-                ? const FoodsListShimmer()
-                : ListView(
+          child: isLoading
+              ? const FoodsListShimmer()
+              : Padding(
+                  padding: EdgeInsets.fromLTRB(12.w, 12.w, 12.w, 12.w),
+                  child: ListView(
                     children: List.generate(foods!.length, (i) {
                       FoodsModel food = foods[i];
                       return FoodTile(
@@ -44,7 +43,7 @@ class AllFastestFoods extends HookWidget {
                       );
                     }),
                   ),
-          ),
+                ),
         ),
       ),
     );
