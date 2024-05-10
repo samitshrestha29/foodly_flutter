@@ -16,6 +16,12 @@ class SearchFoodController extends GetxController {
     _isLoading.value = value;
   }
 
+  RxBool _isTriggered = false.obs;
+  bool get isTriggered => _isLoading.value;
+  set setTrigger(bool value) {
+    _isTriggered.value = value;
+  }
+
   List<FoodsModel>? searchResults;
 
   void searchFoods(String key) async {

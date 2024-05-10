@@ -180,7 +180,7 @@ List<Map<String, dynamic>> foods = [
       {"id": 5, "title": "Sugar", "price": "0.50"}
     ],
     "imageUrl":
-        "https://d326fntlu7tb1e.cloudfront.net/uploads/5c2a9ca8-eb07-400b-b8a6-2acfab2a9ee2-image001.webp",
+        "https://imgs.search.brave.com/vpn-_DDobS26400FODeSRXkWCsNTrDQM2daSOBw7fB8/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5pc3RvY2twaG90/by5jb20vaWQvMTEz/NjQ2NTIxMy9waG90/by90aXJhbWlzdS5q/cGc_cz02MTJ4NjEy/Jnc9MCZrPTIwJmM9/WEVQdzFuQmxGY1Nu/bWk3SlAxOXM0TnFo/ck9xT3J3b2RUT3ZG/cURoeW5BTT0",
     "__v": 0,
     "category": "6531209dbbe4998e90af3fef",
     "time": "35 min"
@@ -206,7 +206,7 @@ List<Map<String, dynamic>> foods = [
       {"id": 5, "title": "Pasta", "price": "3.00"}
     ],
     "imageUrl":
-        "https://d326fntlu7tb1e.cloudfront.net/uploads/5c2a9ca8-eb07-400b-b8a6-2acfab2a9ee2-image001.webp",
+        "https://imgs.search.brave.com/6Bv9v99NprGHSHeOeL_7Nm_rxKLnM00HrPee9aF_RCU/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9zdGF0/aWMwMS5ueXQuY29t/L2ltYWdlcy8yMDIx/LzAyLzE0L2Rpbmlu/Zy9jYXJib25hcmEt/aG9yaXpvbnRhbC9j/YXJib25hcmEtaG9y/aXpvbnRhbC1hcnRp/Y2xlTGFyZ2UtdjIu/anBnP3dpZHRoPTEy/ODAmcXVhbGl0eT03/NSZhdXRvPXdlYnA",
     "__v": 2,
     "category": "6531209dbbe4998e90af3fef",
     "time": "20 min"
@@ -232,7 +232,7 @@ List<Map<String, dynamic>> foods = [
       {"id": 5, "title": "Vinaigrette", "price": "0.50"}
     ],
     "imageUrl":
-        "https://d326fntlu7tb1e.cloudfront.net/uploads/5c2a9ca8-eb07-400b-b8a6-2acfab2a9ee2-image001.webp",
+        "https://imgs.search.brave.com/qbNGCuw_OqPk-b_CPrw-rrMFS56_PXmjOzhenA5WLn8/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9zaW1w/bGUtdmVnYW5pc3Rh/LmNvbS93cC1jb250/ZW50L3VwbG9hZHMv/MjAxOS8wNS9lYXN5/LXZlZ2FuLXBhc3Rh/LXNhbGFkLXJlY2lw/ZS0yLmpwZw",
     "__v": 0,
     "category": "6531209dbbe4998e90af3fef",
     "time": "55 min"
@@ -256,7 +256,7 @@ List<Map<String, dynamic>> foods = [
       {"id": 3, "title": "Ketch up", "price": "0.50"}
     ],
     "imageUrl":
-        "https://d326fntlu7tb1e.cloudfront.net/uploads/5c2a9ca8-eb07-400b-b8a6-2acfab2a9ee2-image001.webp",
+        "https://imgs.search.brave.com/5FFhtA2b47WggRGHfcM62_NRbGCt0tu-TNg1PWmFShk/rs:fit:860:0:0/g:ce/aHR0cHM6Ly93d3cu/YWNvdXBsZWNvb2tz/LmNvbS93cC1jb250/ZW50L3VwbG9hZHMv/MjAyMi8xMC9NYXJn/aGVyaXRhLVBpenph/LTA4Mi5qcGc",
     "__v": 0,
     "category": "6531209dbbe4998e90af3fef",
     "time": "30 min"
@@ -282,7 +282,7 @@ List<Map<String, dynamic>> foods = [
       {"id": 5, "title": "Ice", "price": "0.50"}
     ],
     "imageUrl":
-        "https://d326fntlu7tb1e.cloudfront.net/uploads/5c2a9ca8-eb07-400b-b8a6-2acfab2a9ee2-image001.webp",
+        "https://imgs.search.brave.com/c_dT7k5T5buJVVWa95Ul_fQ1nBnoQ_y_I4wpnMD27cY/rs:fit:860:0:0/g:ce/aHR0cHM6Ly93d3cu/ZGlubmVyYXR0aGV6/b28uY29tL3dwLWNv/bnRlbnQvdXBsb2Fk/cy8yMDE2LzA4L3Ry/b3BpY2FsLXNtb290/aGllLTE0LmpwZw",
     "__v": 0,
     "category": "6531209dbbe4998e90af3fef",
     "time": "25 min"
@@ -314,7 +314,7 @@ List<Map<String, dynamic>> foods = [
       {"id": 5, "title": "Barbecue Sauce", "price": "1.00"}
     ],
     "imageUrl":
-        "https://d326fntlu7tb1e.cloudfront.net/uploads/5c2a9ca8-eb07-400b-b8a6-2acfab2a9ee2-image001.webp",
+        "https://imgs.search.brave.com/uDWmHcd6oXSM1A7T4xgJRWf0JBbjghsOFM5QfmsCOkI/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9pLnBp/bmltZy5jb20vb3Jp/Z2luYWxzLzEyLzg2/L2Q4LzEyODZkOGFl/YWIxMWYwZDVmZjZj/NGNlNmU3MzEzNDA2/LmpwZw",
     "__v": 0,
     "category": "6531209dbbe4998e90af3fef",
     "time": "45 min"

@@ -6,7 +6,6 @@ import 'package:fooodly/common/back_ground_container.dart';
 import 'package:fooodly/common/resuable_text.dart';
 import 'package:fooodly/common/shimmers/foodlist_shimmer.dart';
 import 'package:fooodly/constants/constants.dart';
-import 'package:fooodly/constants/uidata.dart';
 import 'package:fooodly/hooks/fetch_all_categories.dart';
 import 'package:fooodly/models/categories.dart';
 import 'package:fooodly/view/categories/category_tile.dart';

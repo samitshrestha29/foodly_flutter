@@ -1,6 +1,4 @@
 import 'package:fooodly/constants/constants.dart';
-import 'package:fooodly/constants/uidata.dart';
-import 'package:fooodly/models/categories.dart';
 import 'package:fooodly/models/api_error.dart';
 import 'package:fooodly/models/hook_models/hook_result.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';

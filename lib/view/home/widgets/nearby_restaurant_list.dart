@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fooodly/common/shimmers/nearby_shimmer.dart';
-import 'package:fooodly/constants/uidata.dart';
 import 'package:fooodly/hooks/fetch_restaurants.dart';
 import 'package:fooodly/models/restaurants_model.dart';
 import 'package:fooodly/view/home/widgets/restaurant_widget.dart';

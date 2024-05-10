@@ -1,4 +1,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
+<!-- Add Internet Permission Here -->
+    <uses-permission android:name="android.permission.INTERNET" />
     <application
         android:label="fooodly"
         android:name="${applicationName}"
