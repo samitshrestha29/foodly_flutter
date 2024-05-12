@@ -5,12 +5,14 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fooodly/common/app_style.dart';
 import 'package:fooodly/common/resuable_text.dart';
 import 'package:fooodly/constants/constants.dart';
+import 'package:fooodly/controllers/category_controller.dart';
 import 'package:fooodly/models/categories.dart';
 import 'package:fooodly/view/categories/category_page.dart';
 import 'package:get/get.dart';
 
 // ignore: must_be_immutable
 class CategoryTile extends StatelessWidget {
+  final controller = Get.put(CategoryController());
   CategoryTile({
     super.key,
     required this.category,
@@ -22,6 +24,8 @@ class CategoryTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListTile(
       onTap: () {
+        controller.updateCategory = category.id;
+        controller.updateTitle = category.title;
         Get.to(() => const CategoryPage(),
             transition: Transition.fadeIn,
             duration: const Duration(milliseconds: 900));

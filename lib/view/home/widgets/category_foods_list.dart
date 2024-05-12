@@ -16,20 +16,22 @@ class CategoryFoodsList extends HookWidget {
     List<FoodsModel>? foods = hookResults.data;
     final isLoading = hookResults.isLoading;
     return SizedBox(
-        width: width,
-        height: height,
-        child: isLoading
-            ? const FoodsListShimmer()
-            : Padding(
-                padding: EdgeInsets.fromLTRB(12.w, 12.w, 12.w, 12.w),
-                child: ListView(
-                  children: List.generate(foods!.length, (i) {
-                    FoodsModel food = foods[i];
-                    return FoodTile(
-                      food: food,
-                    );
-                  }),
-                ),
-              ));
+      width: width,
+      height: height,
+      child: isLoading
+          ? const FoodsListShimmer()
+          : Padding(
+              padding: EdgeInsets.fromLTRB(12.w, 12.w, 12.w, 12.w),
+              child: ListView(
+                children: List.generate(foods!.length, (i) {
+                  FoodsModel food = foods[i];
+                  return FoodTile(
+                    color: Colors.white,
+                    food: food,
+                  );
+                }),
+              ),
+            ),
+    );
   }
 }
