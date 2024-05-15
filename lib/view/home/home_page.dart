@@ -10,7 +10,7 @@ import 'package:fooodly/view/home/recommendation_page.dart';
 import 'package:fooodly/view/home/widgets/category_foods_list.dart';
 import 'package:fooodly/view/home/widgets/category_list.dart';
 import 'package:fooodly/view/home/widgets/food_list.dart';
-import 'package:fooodly/view/home/widgets/nearby_restaurant_list.dart';
+import 'package:fooodly/view/home/widgets/nearby_restaurants_list.dart';
 import 'package:get/get.dart';
 
 class HomePage extends StatelessWidget {

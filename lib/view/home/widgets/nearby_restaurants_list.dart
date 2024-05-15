@@ -5,6 +5,8 @@ import 'package:fooodly/common/shimmers/nearby_shimmer.dart';
 import 'package:fooodly/hooks/fetch_restaurants.dart';
 import 'package:fooodly/models/restaurants_model.dart';
 import 'package:fooodly/view/home/widgets/restaurant_widget.dart';
+import 'package:fooodly/view/restaurant/restaurant_page.dart';
+import 'package:get/get.dart';
 
 class NearbyRestaurant extends HookWidget {
   const NearbyRestaurant({super.key});
@@ -22,8 +24,11 @@ class NearbyRestaurant extends HookWidget {
           : ListView(
               scrollDirection: Axis.horizontal,
               children: List.generate(restaurants!.length, (i) {
-                var restaurant = restaurants[i];
+                RestaurantsModel restaurant = restaurants[i];
                 return RestaurantWidget(
+                  onTap: () {
+                    Get.to(() => RestaurantPage(restaurant: restaurant));
+                  },
                   image: restaurant.imageUrl,
                   logo: restaurant.logoUrl,
                   time: restaurant.time,

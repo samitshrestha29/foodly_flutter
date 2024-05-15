@@ -5,5 +5,18 @@ class FoodController extends GetxController {
 
   void changePage(int index) {
     currentPage.value = index;
+    // print(currentPage.value);
+  }
+
+  RxInt count = 1.obs;
+
+  void increment() {
+    count.value++;
+  }
+
+  void decrement() {
+    if (count.value > 1) {
+      count.value--;
+    }
   }
 }

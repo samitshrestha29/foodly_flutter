@@ -5,6 +5,8 @@ import 'package:fooodly/common/app_style.dart';
 import 'package:fooodly/common/resuable_text.dart';
 import 'package:fooodly/constants/constants.dart';
 import 'package:fooodly/models/restaurants_model.dart';
+import 'package:fooodly/view/restaurant/restaurant_page.dart';
+import 'package:get/get.dart';
 
 class RestaurantTile extends StatelessWidget {
   const RestaurantTile({super.key, required this.restaurant});
@@ -12,6 +14,9 @@ class RestaurantTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
+      onTap: () {
+        Get.to(() => RestaurantPage(restaurant: restaurant));
+      },
       child: Stack(
         clipBehavior: Clip.hardEdge,
         children: [
