@@ -72,10 +72,12 @@ class RestaurantTile extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       ReusableText(
+                        alignment: TextAlign.left,
                         text: restaurant.title,
                         style: appstyle(11, kDark, FontWeight.w400),
                       ),
                       ReusableText(
+                        alignment: TextAlign.left,
                         text: "Delivery time:${restaurant.time}",
                         style: appstyle(11, kGray, FontWeight.w400),
                       ),
@@ -106,6 +108,7 @@ class RestaurantTile extends StatelessWidget {
               ),
               child: Center(
                 child: ReusableText(
+                  alignment: TextAlign.left,
                   text: restaurant.isAvailable == true ? "open" : "Closed",
                   style: appstyle(12, kLightWhite, FontWeight.w600),
                 ),

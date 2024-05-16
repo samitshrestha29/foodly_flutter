@@ -23,6 +23,7 @@ class AllNearByRestaurant extends HookWidget {
         elevation: 0,
         backgroundColor: kSecondary,
         title: ReusableText(
+          alignment: TextAlign.left,
           text: "Nearby Restaurants",
           style: appstyle(13, kDark, FontWeight.w500),
         ),

@@ -74,10 +74,12 @@ class FoodTile extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       ReusableText(
+                        alignment: TextAlign.left,
                         text: food.title,
                         style: appstyle(11, kDark, FontWeight.w400),
                       ),
                       ReusableText(
+                        alignment: TextAlign.left,
                         text: "Delivery time:${food.time}",
                         style: appstyle(11, kGray, FontWeight.w400),
                       ),
@@ -101,6 +103,7 @@ class FoodTile extends StatelessWidget {
                                     child: Padding(
                                       padding: EdgeInsets.all(2.h),
                                       child: ReusableText(
+                                        alignment: TextAlign.left,
                                         text: addittive.title,
                                         style:
                                             appstyle(8, kDark, FontWeight.w400),
@@ -127,6 +130,7 @@ class FoodTile extends StatelessWidget {
               ),
               child: Center(
                 child: ReusableText(
+                  alignment: TextAlign.left,
                   text: "\$ ${food.price.toStringAsFixed(2)}",
                   style: appstyle(12, kLightWhite, FontWeight.w600),
                 ),

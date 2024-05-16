@@ -22,6 +22,7 @@ class Heading extends StatelessWidget {
             child: ReusableText(
               text: text,
               style: appstyle(16, kDark, FontWeight.bold),
+              alignment: TextAlign.center,
             ),
           ),
           more == null

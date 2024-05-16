@@ -16,6 +16,8 @@ import 'package:fooodly/models/foods_model.dart';
 import 'package:fooodly/view/restaurant/restaurant_page.dart';
 import 'package:get/get.dart';
 
+import '../auth/phone_verification_page.dart';
+
 class FoodPage extends StatefulHookWidget {
   const FoodPage({super.key, required this.food});
   final FoodsModel food;
@@ -131,11 +133,13 @@ class _FoodPageState extends State<FoodPage> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     ReusableText(
+                      alignment: TextAlign.left,
                       text: widget.food.title,
                       style: appstyle(18, kDark, FontWeight.w600),
                     ),
                     Obx(
                       () => ReusableText(
+                        alignment: TextAlign.left,
                         text:
                             "\$ ${widget.food.price * controller.count.value}",
                         style: appstyle(18, kPrimary, FontWeight.w600),
@@ -168,6 +172,7 @@ class _FoodPageState extends State<FoodPage> {
                           child: Padding(
                             padding: EdgeInsets.symmetric(horizontal: 6.w),
                             child: ReusableText(
+                              alignment: TextAlign.left,
                               text: tag,
                               style: appstyle(11, kWhite, FontWeight.w400),
                             ),
@@ -177,6 +182,7 @@ class _FoodPageState extends State<FoodPage> {
                 ),
                 SizedBox(height: 15.h),
                 ReusableText(
+                  alignment: TextAlign.left,
                   text: "Additives and Toppings",
                   style: appstyle(18, kDark, FontWeight.w600),
                 ),
@@ -196,11 +202,13 @@ class _FoodPageState extends State<FoodPage> {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           ReusableText(
+                            alignment: TextAlign.left,
                             text: additive.title,
                             style: appstyle(14, kDark, FontWeight.w400),
                           ),
                           SizedBox(width: 5.w),
                           ReusableText(
+                            alignment: TextAlign.left,
                             text: "\$ ${additive.price}",
                             style: appstyle(11, kPrimary, FontWeight.w600),
                           ),
@@ -215,6 +223,7 @@ class _FoodPageState extends State<FoodPage> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     ReusableText(
+                      alignment: TextAlign.left,
                       text: "Quantity",
                       style: appstyle(18, kDark, FontWeight.bold),
                     ),
@@ -231,6 +240,7 @@ class _FoodPageState extends State<FoodPage> {
                           padding: const EdgeInsets.symmetric(horizontal: 8.0),
                           child: Obx(
                             () => ReusableText(
+                              alignment: TextAlign.left,
                               text: "${controller.count.value}",
                               style: appstyle(14, kDark, FontWeight.w600),
                             ),
@@ -248,6 +258,7 @@ class _FoodPageState extends State<FoodPage> {
                 ),
                 SizedBox(height: 20.h),
                 ReusableText(
+                  alignment: TextAlign.left,
                   text: "Preferences ",
                   style: appstyle(18, kDark, FontWeight.w600),
                 ),
@@ -276,6 +287,7 @@ class _FoodPageState extends State<FoodPage> {
                         child: Padding(
                           padding: EdgeInsets.symmetric(horizontal: 12.w),
                           child: ReusableText(
+                              alignment: TextAlign.center,
                               text: "Place Order",
                               style:
                                   appstyle(18, kLightWhite, FontWeight.w600)),
@@ -306,9 +318,64 @@ class _FoodPageState extends State<FoodPage> {
   Future<dynamic> showVerificationSheet(BuildContext context) {
     return showModalBottomSheet(
         context: context,
+        backgroundColor: Colors.transparent,
+        showDragHandle: true,
         builder: (BuildContext context) {
           return Container(
             height: 510.h,
+            width: width,
+            decoration: BoxDecoration(
+              image: const DecorationImage(
+                image: AssetImage("assets/images/restaurant_bk.png"),
+                fit: BoxFit.fill,
+              ),
+              color: kLightWhite,
+              borderRadius: BorderRadius.only(
+                topLeft: Radius.circular(12.r),
+                topRight: Radius.circular(12.r),
+              ),
+            ),
+            child: Padding(
+              padding: EdgeInsets.all(8.h),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  SizedBox(height: 10.h),
+                  ReusableText(
+                    alignment: TextAlign.center,
+                    text: 'Verify Your Number',
+                    style: appstyle(18, kPrimary, FontWeight.w600),
+                  ),
+                  SizedBox(
+                      height: 300.h,
+                      child: Column(
+                        children:
+                            List.generate(verificationReasons.length, (index) {
+                          return ListTile(
+                            leading: const Icon(
+                              Icons.check_circle_outline,
+                              color: kPrimary,
+                            ),
+                            title: Text(
+                              verificationReasons[index],
+                              style:
+                                  appstyle(11, kGrayLight, FontWeight.normal),
+                            ),
+                          );
+                        }),
+                      )),
+                  SizedBox(height: 10.h),
+                  CustomButton(
+                    btnHeight: 40,
+                    text: "Verify Phone Number",
+                    btnWidth: width,
+                    onTap: () {
+                      Get.to(() => const PhoneVerificationPage());
+                    },
+                  ),
+                ],
+              ),
+            ),
           );
         });
   }

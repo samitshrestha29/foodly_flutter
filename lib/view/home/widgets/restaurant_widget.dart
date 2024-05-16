@@ -79,6 +79,7 @@ class RestaurantWidget extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   ReusableText(
+                    alignment: TextAlign.left,
                     text: text,
                     style: appstyle(12, kDark, FontWeight.w500),
                   ),
@@ -86,10 +87,12 @@ class RestaurantWidget extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       ReusableText(
+                        alignment: TextAlign.left,
                         text: "Delivery time",
                         style: appstyle(12, kGray, FontWeight.w500),
                       ),
                       ReusableText(
+                        alignment: TextAlign.left,
                         text: time,
                         style: appstyle(9, kDark, FontWeight.w500),
                       ),
@@ -108,6 +111,7 @@ class RestaurantWidget extends StatelessWidget {
                       ),
                       SizedBox(width: 10.w),
                       ReusableText(
+                        alignment: TextAlign.left,
                         text: "+$rating reviews and ratings",
                         style: appstyle(12, kGray, FontWeight.w500),
                       ),

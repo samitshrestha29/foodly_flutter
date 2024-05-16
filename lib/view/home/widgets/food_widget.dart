@@ -58,10 +58,12 @@ class FoodWidget extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         ReusableText(
+                          alignment: TextAlign.left,
                           text: title,
                           style: appstyle(12, kDark, FontWeight.w500),
                         ),
                         ReusableText(
+                          alignment: TextAlign.left,
                           text: "\$ $price",
                           style: appstyle(12, kPrimary, FontWeight.w600),
                         ),
@@ -71,10 +73,12 @@ class FoodWidget extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         ReusableText(
+                          alignment: TextAlign.left,
                           text: "Delivery time",
                           style: appstyle(12, kGray, FontWeight.w500),
                         ),
                         ReusableText(
+                          alignment: TextAlign.left,
                           text: time,
                           style: appstyle(9, kDark, FontWeight.w500),
                         ),

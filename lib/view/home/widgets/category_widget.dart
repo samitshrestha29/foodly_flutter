@@ -25,7 +25,7 @@ class CategoryWidget extends StatelessWidget {
           controller.updateCategory = '';
           controller.updateTitle = '';
         } else if (category.value == 'more') {
-          Get.to(() => AllCategories(),
+          Get.to(() => const AllCategories(),
               transition: Transition.fadeIn,
               duration: const Duration(milliseconds: 900));
         } else {
@@ -56,6 +56,7 @@ class CategoryWidget extends StatelessWidget {
                 ),
               ),
               ReusableText(
+                alignment: TextAlign.left,
                 text: category.title,
                 style: appstyle(12, kDark, FontWeight.normal),
               ),

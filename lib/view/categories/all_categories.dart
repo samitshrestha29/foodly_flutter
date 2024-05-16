@@ -23,6 +23,7 @@ class AllCategories extends HookWidget {
         elevation: 0,
         backgroundColor: kOffWhite,
         title: ReusableText(
+          alignment: TextAlign.left,
           text: 'All Categories',
           style: appstyle(12, Colors.black87, FontWeight.bold),
         ),

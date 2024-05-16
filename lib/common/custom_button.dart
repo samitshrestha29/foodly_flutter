@@ -35,6 +35,7 @@ class CustomButton extends StatelessWidget {
         child: ReusableText(
           text: text,
           style: appstyle(12, kLightWhite, FontWeight.w500),
+          alignment: TextAlign.center,
         ),
       ),
     );

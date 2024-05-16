@@ -23,6 +23,7 @@ class AllFastestFoods extends HookWidget {
         elevation: 0,
         backgroundColor: kSecondary,
         title: ReusableText(
+          alignment: TextAlign.left,
           text: "Fastest Foods",
           style: appstyle(13, kDark, FontWeight.w500),
         ),

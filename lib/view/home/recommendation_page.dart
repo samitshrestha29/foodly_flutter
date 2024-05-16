@@ -25,6 +25,7 @@ class Recomendation extends HookWidget {
         elevation: 0,
         backgroundColor: kSecondary,
         title: ReusableText(
+          alignment: TextAlign.left,
           text: "Recomendations",
           style: appstyle(13, kDark, FontWeight.w500),
         ),

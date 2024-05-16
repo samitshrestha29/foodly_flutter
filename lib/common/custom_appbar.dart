@@ -38,6 +38,7 @@ class CustomAppbar extends StatelessWidget {
                       ReusableText(
                         text: "Deliver to",
                         style: appstyle(13, kSecondary, FontWeight.w600),
+                        alignment: TextAlign.left,
                       ),
                       SizedBox(
                         width: MediaQuery.of(context).size.width * 0.65,

@@ -39,8 +39,10 @@ class CategoryPage extends HookWidget {
             color: kGray,
           ),
           title: ReusableText(
-              text: "${controller.titleValue} Category",
-              style: appstyle(13, kGray, FontWeight.w600))),
+            text: "${controller.titleValue} Category",
+            style: appstyle(13, kGray, FontWeight.w600),
+            alignment: TextAlign.left,
+          )),
       body: BackGroundContainer(
         color: Colors.white,
         child: SizedBox(
