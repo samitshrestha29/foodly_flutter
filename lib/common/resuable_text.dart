@@ -3,12 +3,12 @@ import 'package:flutter/material.dart';
 class ReusableText extends StatelessWidget {
   final String text;
   final TextStyle style;
-  final TextAlign alignment;
+  final TextAlign? alignment;
   const ReusableText({
     super.key,
     required this.text,
     required this.style,
-    required this.alignment,
+    this.alignment,
   });
 
   @override
