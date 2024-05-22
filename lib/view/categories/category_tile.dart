@@ -39,7 +39,6 @@ class CategoryTile extends StatelessWidget {
         ),
       ),
       title: ReusableText(
-        alignment: TextAlign.left,
         text: category.title,
         style: appstyle(12, kGray, FontWeight.normal),
       ),

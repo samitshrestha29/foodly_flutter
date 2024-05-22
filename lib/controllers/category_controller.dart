@@ -17,4 +17,6 @@ class CategoryController extends GetxController {
   set updateTitle(String value) {
     _title.value = value;
   }
+
+  fetchCategoryFoods() {}
 }

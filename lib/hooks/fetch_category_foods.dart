@@ -19,7 +19,8 @@ FetchFoods useFetchFoodsByCategory(String code) {
     isLoading.value = true;
 
     try {
-      Uri url = Uri.parse('${controller.categoryValue}/$code');
+      Uri url =
+          Uri.parse('$appBaseUrl/api/foods/${controller.categoryValue}/$code');
       final response = await http.get(url);
       print(response.statusCode);
       if (response.statusCode == 200) {

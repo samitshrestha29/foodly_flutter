@@ -13,30 +13,28 @@ class Heading extends StatelessWidget {
   final bool? more;
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Padding(
-            padding: EdgeInsets.only(top: 10.h),
-            child: ReusableText(
-              text: text,
-              style: appstyle(16, kDark, FontWeight.bold),
-              alignment: TextAlign.center,
-            ),
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        Padding(
+          padding: EdgeInsets.only(top: 10.h),
+          child: ReusableText(
+            text: text,
+            style: appstyle(16, kDark, FontWeight.bold),
+            alignment: TextAlign.center,
           ),
-          more == null
-              ? GestureDetector(
-                  onTap: onTap,
-                  child: Icon(
-                    AntDesign.appstore1,
-                    color: kSecondary,
-                    size: 20.sp,
-                  ),
-                )
-              : const SizedBox.shrink()
-        ],
-      ),
+        ),
+        more == null
+            ? GestureDetector(
+                onTap: onTap,
+                child: Icon(
+                  AntDesign.appstore1,
+                  color: kSecondary,
+                  size: 20.sp,
+                ),
+              )
+            : const SizedBox.shrink()
+      ],
     );
   }
 }
