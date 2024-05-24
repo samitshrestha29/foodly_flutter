@@ -1,5 +1,3 @@
-// ignore_for_file: prefer_final_fields
-
 import 'package:flutter/material.dart';
 import 'package:fooodly/constants/constants.dart';
 import 'package:fooodly/models/api_error.dart';
@@ -8,7 +6,7 @@ import 'package:get/get.dart';
 import 'package:http/http.dart' as http;
 
 class SearchFoodController extends GetxController {
-  RxBool _isLoading = false.obs;
+  final RxBool _isLoading = false.obs;
 
   bool get isLoading => _isLoading.value;
 
@@ -16,7 +14,7 @@ class SearchFoodController extends GetxController {
     _isLoading.value = value;
   }
 
-  RxBool _isTriggered = false.obs;
+  final RxBool _isTriggered = false.obs;
   bool get isTriggered => _isLoading.value;
   set setTrigger(bool value) {
     _isTriggered.value = value;

@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:fooodly/common/app_style.dart';
-import 'package:fooodly/common/resuable_text.dart';
 import 'package:fooodly/constants/constants.dart';
 
 class UserInfoWidget extends StatelessWidget {
@@ -10,52 +8,54 @@ class UserInfoWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 2.w, vertical: 2.h),
-      height: 50.h,
+      height: height * 0.08,
       width: width,
-      color: kOffWhite,
-      child: Container(
-        margin: EdgeInsets.only(top: 10.h),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          crossAxisAlignment: CrossAxisAlignment.end,
-          children: [
-            Row(
-              crossAxisAlignment: CrossAxisAlignment.end,
+      color: kLightWhite,
+      child: Column(
+        children: [
+          Padding(
+            padding: EdgeInsets.fromLTRB(12.w, 0, 16, 0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                CircleAvatar(
-                  radius: 25.r,
-                  backgroundColor: kSecondary,
-                  backgroundImage: const NetworkImage(
+                const CircleAvatar(
+                  radius: 30,
+                  backgroundImage: NetworkImage(
                       'https://imgs.search.brave.com/syssE5L1Rg5E1pnbjYCd7XwnArNdLMZ-PHPig00siHg/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9idWZm/ZXIuY29tL2xpYnJh/cnkvY29udGVudC9p/bWFnZXMvMjAyMi8w/My9za2l0Y2gtLTct/LnBuZw'),
                 ),
-                Padding(
-                  padding: EdgeInsets.only(bottom: 6.h, left: 8.w),
+                const SizedBox(width: 16),
+                Expanded(
                   child: Column(
-                    mainAxisAlignment: MainAxisAlignment.end,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      ReusableText(
-                        text: "Username",
-                        style: appstyle(13, kGray, FontWeight.bold),
-                        alignment: TextAlign.left,
+                      const Text(
+                        'Username',
+                        style: TextStyle(
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold,
+                        ),
                       ),
-                      SizedBox(
-                        width: MediaQuery.of(context).size.width * 0.65,
-                        child: Text(
-                          "samitshrestha29@gmail.com",
-                          style: appstyle(11, kDark, FontWeight.normal),
-                          overflow: TextOverflow.ellipsis,
+                      Text(
+                        'emaili@eemail.gsdfjh',
+                        style: TextStyle(
+                          fontSize: 14,
+                          color: Colors.grey[600],
                         ),
                       ),
                     ],
                   ),
                 ),
-                const Icon(Icons.note_add_sharp)
+                IconButton(
+                  icon: const Icon(Icons.edit),
+                  onPressed: () {
+                    // Handle edit button press
+                  },
+                ),
               ],
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }

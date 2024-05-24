@@ -13,17 +13,8 @@ class ProfileAppBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      backgroundColor: kOffWhite,
+      backgroundColor: kLightWhite,
       elevation: 0,
-      leading: GestureDetector(
-        onTap: () {
-          // logout
-        },
-        child: Icon(
-          AntDesign.logout,
-          size: 18.h,
-        ),
-      ),
       actions: [
         GestureDetector(
           onTap: () {},
