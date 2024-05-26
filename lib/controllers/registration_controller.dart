@@ -24,11 +24,7 @@ class RegistrationController extends GetxController {
     Uri url = Uri.parse("$appBaseUrl/register");
     Map<String, String> headers = {'Content-Type': 'application/json'};
     try {
-      var response = await http.post(
-        url,
-        headers: headers,
-        body: jsonEncode({'data': data}),
-      );
+      var response = await http.post(url, headers: headers, body: data);
       if (response.statusCode == 201) {
         var data = successModelFromJson(response.body);
         setLoading = false;

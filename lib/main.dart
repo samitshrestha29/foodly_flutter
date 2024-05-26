@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:fooodly/view/auth/login_page.dart';
 import 'package:fooodly/view/entrypoint.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 
-Widget defaultHome = const LoginPage();
+Widget defaultHome = MainScreen();
 void main() => runApp(const MyApp());
 
 class MyApp extends StatelessWidget {

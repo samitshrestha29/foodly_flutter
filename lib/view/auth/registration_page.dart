@@ -75,7 +75,7 @@ class _LoginPageState extends State<RegistrationPage> {
                           size: 20,
                           color: kGrayLight,
                         ),
-                        controller: _emailController,
+                        controller: _userController,
                       ),
                       SizedBox(height: 30.h),
                       EmailTextField(

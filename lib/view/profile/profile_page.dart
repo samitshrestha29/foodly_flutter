@@ -93,6 +93,9 @@ class ProfilePage extends StatelessWidget {
                   ),
                   SizedBox(height: 20.h),
                   CustomButton(
+                    onTap: () {
+                      controller.logout();
+                    },
                     btnWidth: width,
                     text: "Logout",
                     radius: 0,

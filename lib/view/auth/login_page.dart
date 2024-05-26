@@ -106,7 +106,6 @@ class _LoginPageState extends State<LoginPage> {
                           btnHeight: 35.h,
                           btnWidth: width,
                           text: "L O G I N",
-                          // In the onTap of the login button
                           onTap: () {
                             if (_emailController.text.isNotEmpty &&
                                 _passwordController.text.length >= 8) {
@@ -122,7 +121,7 @@ class _LoginPageState extends State<LoginPage> {
                                   backgroundColor: kRed,
                                   icon: const Icon(Icons.error_outline));
                             }
-                          }),
+                          })
                     ],
                   ),
                 )
