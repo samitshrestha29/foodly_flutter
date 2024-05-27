@@ -14,11 +14,11 @@ import 'package:get/get_state_manager/get_state_manager.dart';
 class MainScreen extends StatelessWidget {
   MainScreen({super.key});
 
-  List<Widget> pageList = const [
-    HomePage(),
-    SearchPage(),
+  List<Widget> pageList = [
+    const HomePage(),
+    const SearchPage(),
     CartPage(),
-    ProfilePage()
+    const ProfilePage()
   ];
 
   @override

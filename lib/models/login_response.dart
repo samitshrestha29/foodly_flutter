@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+// Functions to convert JSON string to LoginResponse object and vice versa
 LoginResponse loginResponseFromJson(String str) =>
     LoginResponse.fromJson(json.decode(str));
 
@@ -17,6 +18,7 @@ class LoginResponse {
   final String profile;
   final String userToken;
 
+  // Constructor with required named parameters
   LoginResponse({
     required this.id,
     required this.username,
@@ -30,19 +32,21 @@ class LoginResponse {
     required this.userToken,
   });
 
+  // Factory constructor to create LoginResponse from JSON
   factory LoginResponse.fromJson(Map<String, dynamic> json) => LoginResponse(
-        id: json["_id"],
-        username: json["username"],
-        email: json["email"],
-        fcm: json["fcm"],
-        phoneverification: json["phoneverification"],
-        phone: json["phone"],
-        verification: json["verification"],
-        userType: json["userType"],
-        profile: json["profile"],
-        userToken: json["userToken"],
+        id: json["_id"] ?? '',
+        username: json["username"] ?? '',
+        email: json["email"] ?? '',
+        fcm: json["fcm"] ?? '',
+        phoneverification: json["phoneverification"] ?? false,
+        phone: json["phone"] ?? '',
+        verification: json["verification"] ?? false,
+        userType: json["userType"] ?? '',
+        profile: json["profile"] ?? '',
+        userToken: json["userToken"] ?? '',
       );
 
+  // Method to convert LoginResponse object to JSON
   Map<String, dynamic> toJson() => {
         "_id": id,
         "username": username,
