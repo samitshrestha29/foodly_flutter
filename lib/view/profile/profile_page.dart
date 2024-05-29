@@ -8,7 +8,10 @@ import 'package:fooodly/controllers/login_controller.dart';
 import 'package:fooodly/models/login_response.dart';
 import 'package:fooodly/view/auth/login_page.dart';
 import 'package:fooodly/view/auth/login_redirect.dart';
+<<<<<<< HEAD
 import 'package:fooodly/view/auth/verification_page.dart';
+=======
+>>>>>>> ac0b701506f6aa5c7cb423de398b19280ef3b37f
 import 'package:fooodly/view/profile/widget/profile_app_bar.dart';
 import 'package:fooodly/view/profile/widget/profile_tile_widget.dart';
 import 'package:fooodly/view/profile/widget/user_info_widget.dart';
@@ -33,10 +36,13 @@ class ProfilePage extends StatelessWidget {
       return const LoginRedirect();
     }
 
+<<<<<<< HEAD
     if (user.verification == false) {
       return const VerificationPage();
     }
 
+=======
+>>>>>>> ac0b701506f6aa5c7cb423de398b19280ef3b37f
     return Scaffold(
       backgroundColor: kPrimary,
       appBar: PreferredSize(
