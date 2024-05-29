@@ -34,9 +34,11 @@ class LoginController extends GetxController {
         String userData = jsonEncode(data);
         box.write(userId, userData);
         box.write("token", data.userToken);
-        box.write(userId, data.id);
+        box.write("userId", data.id); // Fixed key
         box.write("verification", data.verification);
+
         setLoading = false;
+
         Get.snackbar(
           "You are successfully logged in",
           "Enjoy your awesome Experience",
@@ -49,11 +51,15 @@ class LoginController extends GetxController {
           Get.offAll(() => const VerificationPage(),
               transition: Transition.fade,
               duration: const Duration(milliseconds: 900));
-
-          Get.offAll(() => MainScreen(),
+        }
+        if (data.verification == true) {
+          Get.offAll(() => const VerificationPage(),
               transition: Transition.fade,
               duration: const Duration(milliseconds: 900));
         }
+        Get.offAll(() => MainScreen(),
+            transition: Transition.fade,
+            duration: const Duration(milliseconds: 900));
       } else {
         var error = apiErrorFromJson(response.body);
 
@@ -72,5 +78,17 @@ class LoginController extends GetxController {
     Get.offAll(() => MainScreen(),
         transition: Transition.fade,
         duration: const Duration(milliseconds: 900));
+  }
+
+  LoginResponse? getUserInfo() {
+    String? userId = box.read("userId");
+    String? data;
+    if (userId != null) {
+      data = box.read(userId.toString());
+    }
+    if (data != null) {
+      return loginResponseFromJson(data);
+    }
+    return null;
   }
 }

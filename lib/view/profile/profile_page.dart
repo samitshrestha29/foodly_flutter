@@ -1,23 +1,42 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_vector_icons/flutter_vector_icons.dart';
 import 'package:fooodly/common/custom_button.dart';
 import 'package:fooodly/common/custom_container.dart';
 import 'package:fooodly/constants/constants.dart';
 import 'package:fooodly/controllers/login_controller.dart';
-import 'package:fooodly/view/auth/login_page.dart'; // Import the LoginPage
+import 'package:fooodly/models/login_response.dart';
+import 'package:fooodly/view/auth/login_page.dart';
+import 'package:fooodly/view/auth/login_redirect.dart';
+import 'package:fooodly/view/auth/verification_page.dart';
 import 'package:fooodly/view/profile/widget/profile_app_bar.dart';
 import 'package:fooodly/view/profile/widget/profile_tile_widget.dart';
 import 'package:fooodly/view/profile/widget/user_info_widget.dart';
-import 'package:get/get.dart'; // Import Get
+import 'package:get/get.dart';
+import 'package:get_storage/get_storage.dart';
 
 class ProfilePage extends StatelessWidget {
   const ProfilePage({super.key});
 
   @override
   Widget build(BuildContext context) {
+    LoginResponse? user;
     final controller = Get.put(LoginController());
+    final box = GetStorage();
+    String? token = box.read('token');
+
+    if (token != null) {
+      user = controller.getUserInfo();
+    }
+
+    if (token == null || user == null) {
+      return const LoginRedirect();
+    }
+
+    if (user.verification == false) {
+      return const VerificationPage();
+    }
+
     return Scaffold(
       backgroundColor: kPrimary,
       appBar: PreferredSize(
@@ -26,7 +45,7 @@ class ProfilePage extends StatelessWidget {
         child: CustomContainer(
           containerContent: Column(
             children: [
-              const UserInfoWidget(),
+              UserInfoWidget(user: user),
               Column(
                 children: [
                   SizedBox(height: 10.h),
@@ -96,7 +115,7 @@ class ProfilePage extends StatelessWidget {
                     onTap: () {
                       controller.logout();
                     },
-                    btnWidth: width,
+                    btnWidth: MediaQuery.of(context).size.width,
                     text: "Logout",
                     radius: 0,
                   )
