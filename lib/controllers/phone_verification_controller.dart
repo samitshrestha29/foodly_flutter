@@ -40,7 +40,7 @@ class PhoneVerificationController extends GetxController {
 
     try {
       var response = await http.get(url, headers: headers);
-
+      print(response.statusCode);
       if (response.statusCode == 200) {
         LoginResponse data = loginResponseFromJson(response.body);
         String userId = data.id;
@@ -60,7 +60,8 @@ class PhoneVerificationController extends GetxController {
           backgroundColor: kPrimary,
           icon: const Icon(Ionicons.fast_food_outline),
         );
-        Get.back();
+        Get.offAll(() => MainScreen());
+        setLoading = false;
       } else {
         var error = apiErrorFromJson(response.body);
 

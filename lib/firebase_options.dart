@@ -50,19 +50,19 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyCyu4EpdqGLnVakG9qYfQx_EAn0iMtQEFs',
-    appId: '1:611297329965:android:6092ca0fd3a1f4ec3509a4',
-    messagingSenderId: '611297329965',
-    projectId: 'foodly-flutter-8c8ae',
-    storageBucket: 'foodly-flutter-8c8ae.appspot.com',
+    apiKey: 'AIzaSyCzomkffZCWdJHjs0lA6S02PRJLAYW88Zw',
+    appId: '1:50901722354:android:e69bc01aedafd64f249c6b',
+    messagingSenderId: '50901722354',
+    projectId: 'foodly-43ee6',
+    storageBucket: 'foodly-43ee6.appspot.com',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyAgwx8CxbNrKMYA6vslbyEBK4JGqJO6F80',
-    appId: '1:611297329965:ios:e29c1493f92b65d23509a4',
-    messagingSenderId: '611297329965',
-    projectId: 'foodly-flutter-8c8ae',
-    storageBucket: 'foodly-flutter-8c8ae.appspot.com',
+    apiKey: 'AIzaSyANGDvIilIPCpssbgzPi2E0nyjOU9MJa1g',
+    appId: '1:50901722354:ios:7a1e2e488401c15c249c6b',
+    messagingSenderId: '50901722354',
+    projectId: 'foodly-43ee6',
+    storageBucket: 'foodly-43ee6.appspot.com',
     iosBundleId: 'com.example.fooodly',
   );
 }
