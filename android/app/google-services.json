@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "50901722354",
+    "project_id": "foodly-43ee6",
+    "storage_bucket": "foodly-43ee6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:50901722354:android:e69bc01aedafd64f249c6b",
+        "android_client_info": {
+          "package_name": "com.example.fooodly"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCzomkffZCWdJHjs0lA6S02PRJLAYW88Zw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

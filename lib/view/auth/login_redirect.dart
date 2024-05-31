@@ -17,9 +17,11 @@ class LoginRedirect extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
-          "data",
-          style: appstyle(12, kDark, FontWeight.w500),
+        title: Center(
+          child: Text(
+            "Please Login to acess to this page ",
+            style: appstyle(14, kDark, FontWeight.bold),
+          ),
         ),
       ),
       body: SafeArea(
@@ -31,7 +33,7 @@ class LoginRedirect extends StatelessWidget {
               height: height / 2,
               color: Colors.white,
               child: LottieBuilder.asset(
-                "assets/anime/delivery,json",
+                "assets/anime/delivery.json",
                 width: width,
                 height: height / 2,
               ),
@@ -40,7 +42,7 @@ class LoginRedirect extends StatelessWidget {
               btnWidth: width,
               text: "L O G I N",
               onTap: () {
-                Get.to(() => const ProfilePage(),
+                Get.to(() => const LoginPage(),
                     transition: Transition.cupertino,
                     duration: const Duration(milliseconds: 900));
               },

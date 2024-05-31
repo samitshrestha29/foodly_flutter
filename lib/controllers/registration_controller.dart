@@ -25,9 +25,13 @@ class RegistrationController extends GetxController {
     Map<String, String> headers = {'Content-Type': 'application/json'};
     try {
       var response = await http.post(url, headers: headers, body: data);
+      // print(response.statusCode == 201);
       if (response.statusCode == 201) {
         var data = successModelFromJson(response.body);
+
         setLoading = false;
+
+        Get.back();
 
         Get.snackbar(
           "You are successfully registered",
