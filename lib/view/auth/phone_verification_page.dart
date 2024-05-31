@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:fooodly/common/app_style.dart';
 import 'package:fooodly/constants/constants.dart';
 import 'package:fooodly/controllers/phone_verification_controller.dart';
