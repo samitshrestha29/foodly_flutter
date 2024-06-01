@@ -48,7 +48,7 @@ class PhoneVerificationController extends GetxController {
 
         box.write(userId, userData);
         box.write("token", data.userToken);
-        box.write("userId", data.id); // Fixed key
+        box.write("userId", data.id);
         box.write("verification", data.verification);
 
         setLoading = false;

@@ -9,7 +9,7 @@ class VerificationService {
   final FirebaseAuth _auth = FirebaseAuth.instance;
 
   Future<void> verifyPhoneNumber(String phoneNumber,
-      {required void Function(String verificationId, int? resendToken)
+      {required Null Function(String verificationId, int? resendToken)
           codeSent}) async {
     await _auth.verifyPhoneNumber(
       phoneNumber: phoneNumber,
