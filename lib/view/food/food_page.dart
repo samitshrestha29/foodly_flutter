@@ -9,8 +9,11 @@ import 'package:fooodly/common/custom_text_field.dart';
 import 'package:fooodly/common/resuable_text.dart';
 import 'package:fooodly/constants/constants.dart';
 import 'package:fooodly/controllers/foods_controller.dart';
+import 'package:fooodly/controllers/login_controller.dart';
 import 'package:fooodly/hooks/fetch_restaurant.dart';
 import 'package:fooodly/models/foods_model.dart';
+import 'package:fooodly/models/login_response.dart';
+import 'package:fooodly/view/auth/login_page.dart';
 import 'package:fooodly/view/restaurant/restaurant_page.dart';
 import 'package:get/get.dart';
 
@@ -40,8 +43,11 @@ class _FoodPageState extends State<FoodPage> {
 
   @override
   Widget build(BuildContext context) {
+    LoginResponse? user;
     final hookResult = useFetchRetaurant(widget.food.restaurant);
+    final loginController = Get.put(LoginController());
 
+    user = loginController.getUserInfo();
     return Scaffold(
       body: ListView(
         padding: EdgeInsets.zero,
@@ -306,7 +312,13 @@ class _FoodPageState extends State<FoodPage> {
                     children: [
                       GestureDetector(
                         onTap: () {
-                          showVerificationSheet(context);
+                          if (user == null) {
+                            Get.to(() => const LoginPage());
+                          } else if (user.phoneverification == false) {
+                            showVerificationSheet(context);
+                          } else {
+                            print("Place Order");
+                          }
                         },
                         child: Padding(
                           padding: EdgeInsets.symmetric(horizontal: 12.w),

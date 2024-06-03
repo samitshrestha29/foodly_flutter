@@ -3,12 +3,34 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fooodly/common/app_style.dart';
 import 'package:fooodly/common/resuable_text.dart';
 import 'package:fooodly/constants/constants.dart';
+import 'package:fooodly/controllers/user_location_controller.dart';
+import 'package:geolocator/geolocator.dart';
+import 'package:get/get_core/src/get_main.dart';
+import 'package:get/get_instance/get_instance.dart';
+import 'package:get/get_state_manager/get_state_manager.dart';
+import 'package:google_maps_flutter/google_maps_flutter.dart';
 
-class CustomAppbar extends StatelessWidget {
+class CustomAppbar extends StatefulWidget {
   const CustomAppbar({super.key});
 
   @override
+  State<CustomAppbar> createState() => _CustomAppbarState();
+}
+
+class _CustomAppbarState extends State<CustomAppbar> {
+  late double width;
+
+  @override
+  void initState() {
+    super.initState();
+    _determinePosition();
+  }
+
+  @override
   Widget build(BuildContext context) {
+    final controller = Get.put(UserLocationController());
+    width = MediaQuery.of(context).size.width;
+
     return Container(
       padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 6.h),
       height: 110.h,
@@ -40,12 +62,16 @@ class CustomAppbar extends StatelessWidget {
                         style: appstyle(13, kSecondary, FontWeight.w600),
                         alignment: TextAlign.left,
                       ),
-                      SizedBox(
-                        width: MediaQuery.of(context).size.width * 0.65,
-                        child: Text(
-                          "16768 21st Ave N, Plymouth, MN 55447",
-                          style: appstyle(11, kDark, FontWeight.normal),
-                          overflow: TextOverflow.ellipsis,
+                      Obx(
+                        () => SizedBox(
+                          width: MediaQuery.of(context).size.width * 0.65,
+                          child: Text(
+                            controller.address == ""
+                                ? "16768 21st Ave N, Plymouth, MN 55447"
+                                : controller.address,
+                            style: appstyle(11, kDark, FontWeight.normal),
+                            overflow: TextOverflow.ellipsis,
+                          ),
                         ),
                       ),
                     ],
@@ -58,7 +84,7 @@ class CustomAppbar extends StatelessWidget {
                 getTimeOfDay(),
                 style: const TextStyle(fontSize: 35),
               ),
-            )
+            ),
           ],
         ),
       ),
@@ -76,5 +102,40 @@ class CustomAppbar extends StatelessWidget {
     } else {
       return ' 🌙 ';
     }
+  }
+
+  Future<void> _determinePosition() async {
+    bool serviceEnabled;
+    LocationPermission permission;
+
+    serviceEnabled = await Geolocator.isLocationServiceEnabled();
+    if (!serviceEnabled) {
+      return Future.error('Location services are disabled.');
+    }
+
+    permission = await Geolocator.checkPermission();
+    if (permission == LocationPermission.denied) {
+      permission = await Geolocator.requestPermission();
+      if (permission == LocationPermission.denied) {
+        return Future.error('Location permissions are denied');
+      }
+    }
+
+    if (permission == LocationPermission.deniedForever) {
+      return Future.error(
+          'Location permissions are permanently denied, we cannot request permissions.');
+    }
+
+    _getCurrentLocation();
+  }
+
+  Future<void> _getCurrentLocation() async {
+    final controller = Get.put(UserLocationController());
+    Position position = await Geolocator.getCurrentPosition(
+        desiredAccuracy: LocationAccuracy.best);
+    LatLng currentLocation = LatLng(position.latitude, position.longitude);
+    controller.setPosition(currentLocation);
+
+    controller.getUserAddress(currentLocation);
   }
 }
